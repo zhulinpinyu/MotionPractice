@@ -2,6 +2,8 @@
 $:.unshift("/Library/RubyMotion/lib")
 require 'motion/project/template/ios'
 
+version = `motion --version`; puts "RubyMotion version #{version}"; puts " "
+
 begin
   require 'bundler'
   Bundler.require
@@ -10,5 +12,5 @@ end
 
 Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings.
-  app.name = 'Episode-01'
+  app.name = 'LRM-Table'
 end
