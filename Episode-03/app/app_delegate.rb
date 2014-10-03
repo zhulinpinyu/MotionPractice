@@ -18,6 +18,8 @@ class AppDelegate
     case part
     when '1'
       Loginv1Controller
+    when '2'
+      Loginv2Controller
     end
   end
 end
