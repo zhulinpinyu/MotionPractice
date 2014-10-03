@@ -10,3 +10,5 @@ Episode-02 [Caching of table cells](http://blog.bigbinary.com/2013/11/25/learn-r
 Episode-03 [Building login screen using RMQ part I](http://blog.bigbinary.com/2013/12/05/building-login-screen-in-ruby-motion.html)
 
 ![RMQ-Notes](https://github.com/zhulinpinyu/MotionPractice/blob/master/learn_notes/images/E03-1.png)
+
+Episode-04 [Building login screen using RMQ part II](http://blog.bigbinary.com/2013/12/06/building-login-screen-in-rubymotion-part-2.html)
