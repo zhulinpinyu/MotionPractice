@@ -16,7 +16,23 @@ class MainController < UIViewController
   end
 
   def login
-    App.alert "HaHa!"
+    if submission_invalid?
+      handle_submission_invalid
+    else
+      handle_submission_valid
+    end
+  end
+
+  def submission_invalid?
+    @email.text.blank? || @pwd.text.blank?
+  end
+
+  def handle_submission_invalid
+    App.alert "邮箱或密码有误，请重新输入"
+  end
+
+  def handle_submission_valid
+    App.alert "Good!"
   end
 
 end

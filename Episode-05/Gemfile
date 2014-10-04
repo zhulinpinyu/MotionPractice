@@ -6,6 +6,7 @@ gem 'ruby_motion_query'
 # Useful tools that most people use
 gem 'bubble-wrap'
 
+gem 'motion-support'
 # If you use a cocoapod (find them here https://www.cocoacontrols.com)
 #gem 'motion-cocoapods' 
 
