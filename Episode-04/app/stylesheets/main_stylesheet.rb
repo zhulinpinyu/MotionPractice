@@ -6,34 +6,45 @@ class MainStylesheet < ApplicationStylesheet
   end
 
   def root_view(st)
-    st.background_color = color.battleship_gray
+    st.background_color = color.brown
   end
 
   def email(st)
     st.frame = {top: 60, width: 160, height: 25, centered: :horizontal}
-    st.text_alignment = :left
-    st.background_color = color.white
     st.font = font.small
-    st.text = 'Email'
+    st.background_color = color.white
+    st.view.tap do |view|
+      view.placeholder = "Email"
+      view.clearButtonMode = UITextFieldViewModeWhileEditing
+      view.keyboardType = UIKeyboardTypeEmailAddress
+      view.borderStyle = UITextBorderStyleRoundedRect
+      view.autocorrectionType = UITextAutocorrectionTypeNo
+    end
   end
 
   def password(st)
     st.frame = {top: 90, width: 160, height: 25, centered: :horizontal}
-    st.text_alignment = :left
-    st.background_color = color.white
     st.font = font.small
-    st.text = 'Password'
+    st.background_color = color.white
+    st.view.tap do |view|
+      view.placeholder = "Password"
+      view.clearButtonMode = UITextFieldViewModeWhileEditing
+      st.view.setSecureTextEntry(true)
+      view.borderStyle = UITextBorderStyleRoundedRect
+      view.autocorrectionType = UITextAutocorrectionTypeNo
+    end
   end
 
   def submmit_btn(st)
     st.frame = {top: 120, width: 160, height: 25, centered: :horizontal}
-    st.background_color = color.green
     st.font = font.small
+    st.color = color.white
+    st.background_color = color.tint
     st.text = 'Login'
   end
 
   def login_form(st)
-    st.frame = {top: 30, width: 200, height: 100, centered: :horizontal}
+    st.frame = {top: 30, width: 200, height: 200, centered: :horizontal}
   end
 
 end
