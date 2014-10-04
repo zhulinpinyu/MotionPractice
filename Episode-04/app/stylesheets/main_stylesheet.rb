@@ -10,7 +10,7 @@ class MainStylesheet < ApplicationStylesheet
   end
 
   def email(st)
-    st.frame = {top: 60, width: 160, height: 25, centered: :horizontal}
+    st.frame = {left: 10, top: 70, width: 180, height: 30, centered: :horizontal}
     st.font = font.small
     st.background_color = color.white
     st.view.tap do |view|
@@ -23,7 +23,7 @@ class MainStylesheet < ApplicationStylesheet
   end
 
   def password(st)
-    st.frame = {top: 90, width: 160, height: 25, centered: :horizontal}
+    st.frame = {left: 10, top: 110, width: 180, height: 30, centered: :horizontal}
     st.font = font.small
     st.background_color = color.white
     st.view.tap do |view|
@@ -36,7 +36,7 @@ class MainStylesheet < ApplicationStylesheet
   end
 
   def submmit_btn(st)
-    st.frame = {top: 120, width: 160, height: 25, centered: :horizontal}
+    st.frame = {left: 10, top: 150, width: 180, height: 30, centered: :horizontal}
     st.font = font.small
     st.color = color.white
     st.background_color = color.tint
