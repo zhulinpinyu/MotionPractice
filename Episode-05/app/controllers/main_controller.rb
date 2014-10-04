@@ -7,10 +7,16 @@ class MainController < UIViewController
     rmq(self.view).apply_style :root_view
 
     rmq.append(UIView, :login_form).tap do |q|
-      q.append(UITextField, :email)
-      q.append(UITextField, :password)
-      q.append(UIButton, :submit_btn)
+      @email = q.append(UITextField, :email).get
+      @pwd = q.append(UITextField, :password).get
+      q.append(UIButton, :submit_btn).on(:tap) do |_|
+        login
+      end
     end
+  end
+
+  def login
+    App.alert "HaHa!"
   end
 
 end
