@@ -1,0 +1,12 @@
+GEM
+  remote: https://rubygems.org/
+  specs:
+    rake (10.3.2)
+    ruby_motion_query (0.7.1)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  rake
+  ruby_motion_query
