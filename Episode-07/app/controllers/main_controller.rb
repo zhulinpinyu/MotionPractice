@@ -12,6 +12,10 @@ class MainController < UIViewController
       q.append(UIButton, :submit_btn).on(:tap) do |_|
         login
       end
+      q.append(UILabel, :login_help_label)
+      q.append(UIButton, :login_help_btn).on(:tap) do |_|
+        App.alert "点我，点我"
+      end
     end
   end
 

@@ -43,8 +43,25 @@ class MainStylesheet < ApplicationStylesheet
     st.text = 'Login'
   end
 
+  def login_help_label(st)
+    st.frame = {left: 10, top: 180, width: 45, height: 30}
+    st.font = font.xsmall
+    st.color = color.black
+    st.text = 'Help:'
+  end
+
+  def login_help_btn(st)
+    st.frame = {left: 55, top: 180, width: 90, height: 30}
+    st.height = 30
+    st.font = font.xsmall
+    st.color = color.tint_color
+    st.view.titleLabel.lineBreakMode = NSLineBreakByWordWrapping
+    st.view.contentHorizontalAlignment = UIControlContentHorizontalAlignmentCenter
+    st.text = '找回密码。'
+  end
+
   def login_form(st)
-    st.frame = {top: 30, width: 200, height: 200, centered: :horizontal}
+    st.frame = {top: 30, width: 200, height: 250, centered: :horizontal}
   end
 
 end
