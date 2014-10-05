@@ -8,7 +8,7 @@ class MainController < UIViewController
 
     rmq.append(UIView, :login_form).tap do |q|
       @email = q.append(UITextField, :email).get
-      @pwd = q.append(UITextField, :password).get
+      @password = q.append(UITextField, :password).get
       q.append(UIButton, :submit_btn).on(:tap) do |_|
         login
       end
@@ -16,23 +16,35 @@ class MainController < UIViewController
   end
 
   def login
-    if submission_invalid?
-      handle_submission_invalid
+    if invalid_submission?
+      handle_invalid_submission
     else
-      handle_submission_valid
+      handle_valid_submission
     end
   end
 
-  def submission_invalid?
-    @email.text.blank? || @pwd.text.blank?
+  def invalid_submission?
+    @email.text.blank? || @password.text.blank?
   end
 
-  def handle_submission_invalid
+  def handle_invalid_submission
     App.alert "邮箱或密码有误，请重新输入"
   end
 
-  def handle_submission_valid
-    App.alert "Good!"
+  def handle_valid_submission
+    process_authentication @email.text, App::Persistence['device_token'], @password.text
+  end
+
+  def process_authentication(email, device_token, password)
+    AuthenticationService.new(self, {email: email, device_token: device_token, password: password}).process
+  end
+
+  def handle_login_successful
+    App.alert "Login Successful, Welcome!"
+  end
+
+  def handle_login_failed
+    App.alert "Sorry,Login failed."
   end
 
 end
