@@ -2,36 +2,17 @@ class LoginHelpController < UIViewController
 
   def viewDidLoad
     super
-
     rmq.stylesheet = LoginHelpControllerStylesheet
     rmq(self.view).apply_style :root_view
 
-    # Create your views here
-  end
+    rmq.append(UIView, :reset_password_form).tap do |q|
 
-  # Remove if you are only supporting portrait
-  def supportedInterfaceOrientations
-    UIInterfaceOrientationMaskAll
-  end
-
-  # Remove if you are only supporting portrait
-  def willAnimateRotationToInterfaceOrientation(orientation, duration: duration)
-    rmq.all.reapply_styles
+      q.append(UILabel, :help_label)
+      q.append(UILabel, :help_notes_label)
+      q.append(UITextField, :email)
+      q.append(UIButton, :reset_btn).on(:tap) do |_|
+        App.alert "Ok!"
+      end
+    end
   end
 end
-
-
-__END__
-
-# You don't have to reapply styles to all UIViews, if you want to optimize,
-# another way to do it is tag the views you need to restyle in your stylesheet,
-# then only reapply the tagged views, like so:
-def logo(st)
-  st.frame = {t: 10, w: 200, h: 96}
-  st.centered = :horizontal
-  st.image = image.resource('logo')
-  st.tag(:reapply_style)
-end
-
-# Then in willAnimateRotationToInterfaceOrientation
-rmq(:reapply_style).reapply_styles

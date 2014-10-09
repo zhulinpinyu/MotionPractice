@@ -14,7 +14,9 @@ class MainController < UIViewController
       end
       q.append(UILabel, :login_help_label)
       q.append(UIButton, :login_help_btn).on(:tap) do |_|
-        App.alert "点我，点我"
+        controller = LoginHelpController.alloc.init
+        controller.modalTransitionStyle = UIModalTransitionStylePartialCurl
+        self.presentModalViewController(controller, animated: true)
       end
     end
   end
