@@ -28,6 +28,7 @@ class LoginHelpControllerStylesheet < ApplicationStylesheet
     st.font = font.xsmall
     st.color = color.black
     st.text = 'Pls fill your sign up Email reset your password.'
+    st.number_of_lines = :unlimited
   end
 
   def email(st)
@@ -49,5 +50,20 @@ class LoginHelpControllerStylesheet < ApplicationStylesheet
     st.color = color.white
     st.background_color = color.tint_color
     st.text = 'Reset Password'
+  end
+
+  def more_help_label(st)
+    st.frame = {l: 0, t: 250, w: 180, h: 30}
+    st.font = font.xsmall
+    st.color = color.black
+    st.text = 'More help:'
+    st.number_of_lines = :unlimited
+  end
+
+  def more_help_note(st)
+    st.frame = {l: 0, t: 270, w: 150, h: 30}
+    st.font = font.xsmall
+    st.color = color.black
+    st.text = 'Conact to me mlx@lg.com'
   end
 end

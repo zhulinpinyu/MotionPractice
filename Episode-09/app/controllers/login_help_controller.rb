@@ -13,6 +13,11 @@ class LoginHelpController < UIViewController
       q.append(UIButton, :reset_btn).on(:tap) do |_|
         reset_password
       end
+
+      q.append(UILabel, :more_help_label)
+      q.append(UIButton, :more_help_note).on(:tap) do |_|
+        
+      end
     end
   end
 
