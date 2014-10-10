@@ -9,10 +9,43 @@ class LoginHelpController < UIViewController
 
       q.append(UILabel, :help_label)
       q.append(UILabel, :help_notes_label)
-      q.append(UITextField, :email)
+      @email = q.append(UITextField, :email).get
       q.append(UIButton, :reset_btn).on(:tap) do |_|
-        App.alert "Ok!"
+        reset_password
       end
     end
+  end
+
+  def reset_password
+    if submission_invalid?
+      handle_invalid_submission
+    else
+      handle_valid_submission
+    end
+  end
+
+  def submission_invalid?
+    @email.text.blank?
+  end
+
+  def handle_valid_submission
+    process_reset_password @email.text
+  end
+
+  def process_reset_password(email)
+    PasswordProcessService.new(self,{email: email}).process
+  end
+
+  def handle_reset_password_successful
+    App.alert "Email has send to your Inbox."
+    self.dismissViewControllerAnimated(true, completion: nil)
+  end
+
+  def handle_no_record_found
+    App.alert "Your Email Address Invalid."
+  end
+
+  def handle_invalid_submission
+    App.alert "Enter email address"
   end
 end
