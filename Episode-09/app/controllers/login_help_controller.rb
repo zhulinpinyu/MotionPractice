@@ -29,6 +29,8 @@ class LoginHelpController < UIViewController
         mail_controller.mailComposeDelegate = self;
         mail_controller.setToRecipients(['support@lg.com'])
         mail_controller.setSubject("Learn RubyMotion - Login help")
+
+        # For IOS 7.1 Work fine but IOS 8.0 @presented_by is nil
         if @presented_by
           @presented_by.presentViewController mail_controller, animated: true, completion: nil
         else
