@@ -11,13 +11,24 @@ class AuthenticationService
   end
 
   def process
+    show_spinner
     user = hash.fetch :user
     method = if user[:email] == "mlx@lg.com" && user[:password] == "mlx"
       :handle_login_successful
     else
       :handle_login_failed
     end
+    hide_spinner
     client.send method
+  end
+
+
+  def show_spinner
+    SVProgressHUD.showWithMaskType(SVProgressHUDMaskTypeClear)
+  end
+
+  def hide_spinner
+    SVProgressHUD.dismiss
   end
 
 end
