@@ -7,6 +7,14 @@ class LanguageService
     Language.order(:name).all
   end
 
+  def static
+    Language.order(:name).where(:static).eq(true).all
+  end
+
+  def dynamic
+    Language.order(:name).where(:dynamic).eq(true).all
+  end
+
   def build_languages
     Language.delete_all
 
