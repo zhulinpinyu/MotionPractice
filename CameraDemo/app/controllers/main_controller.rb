@@ -7,8 +7,10 @@ class MainController < UIViewController
     init_nav
     rmq(self.view).apply_style :root_view
 
-    # Create your UIViews here
-    @hello_world_label = rmq.append!(UILabel, :hello_world)
+    # Camera button
+    @camera_button = rmq.append(UIButton, :camera_button).on(:touch) do
+      p "Camera"
+    end
   end
 
   def init_nav
