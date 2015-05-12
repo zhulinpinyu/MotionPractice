@@ -16,5 +16,4 @@ class MainStylesheet < ApplicationStylesheet
     st.font = font.medium
     st.text = '拍照'
   end
-
 end
