@@ -11,6 +11,11 @@ class MainController < UIViewController
     @camera_button = rmq.append(UIButton, :camera_button).on(:touch) do
       take_photo
     end
+
+    #相册
+    rmq.append(UIButton, :album_button).on(:touch) do
+      select_album
+    end
   end
 
   def take_photo
@@ -20,6 +25,12 @@ class MainController < UIViewController
       end
     else
       App.alert("后置摄像头存在故障")
+    end
+  end
+
+  def select_album
+    BW::Device.camera.any.picture(media_types: [:image]) do |result|
+      set_photo(result[:original_image])
     end
   end
 
