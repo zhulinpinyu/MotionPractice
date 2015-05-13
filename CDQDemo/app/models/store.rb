@@ -1,0 +1,3 @@
+class Store < CDQManagedObject
+
+end
