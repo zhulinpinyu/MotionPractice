@@ -8,7 +8,11 @@ class MainController < UIViewController
     rmq(self.view).apply_style :root_view
 
     # Create your UIViews here
-    @hello_world_label = rmq.append!(UILabel, :hello_world)
+    rmq.append(UILabel, :name_label)
+    @name = rmq.append(UITextField, :name_field).focus.get
+    rmq.append(UIButton, :save_button).on(:touch) do
+      p @name.text
+    end
   end
 
 end
