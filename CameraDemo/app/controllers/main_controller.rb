@@ -26,6 +26,7 @@ class MainController < UIViewController
   def take_photo
     if BW::Device.camera.rear?
       BW::Device.camera.rear.picture(media_types: [:image, :movie]) do |result|
+        save_photo(result[:original_image])
         set_photo(result[:original_image])
       end
     else
@@ -44,6 +45,12 @@ class MainController < UIViewController
     controller = WSAssetPickerController.alloc.initWithAssetsLibrary(@library)
     controller.delegate = ws_asset_picker_delegate
     self.presentViewController(controller, animated:true, completion:nil)
+  end
+
+  def save_photo(photo)
+    data = UIImagePNGRepresentation(photo)
+    data.writeToFile(App.documents_path+'/ol3map', atomically: true)
+    UIImageWriteToSavedPhotosAlbum(photo,nil,nil,nil)
   end
 
   def set_photo(photo)
