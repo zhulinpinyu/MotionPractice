@@ -30,4 +30,10 @@ class MainStylesheet < ApplicationStylesheet
     st.text = 'Save'
   end
 
+  def store_name(st)
+    st.text_alignment = :center
+    st.color = color.battleship_gray
+    st.font = font.medium
+  end
+
 end
