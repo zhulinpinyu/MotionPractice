@@ -18,3 +18,5 @@ CDQDemo
 
 并且添加 `cdq.setup` 在application方法中
 ```
+
+REF: [https://github.com/infinitered/cdq/wiki/Greenfield-Quick-Start](https://github.com/infinitered/cdq/wiki/Greenfield-Quick-Start)
