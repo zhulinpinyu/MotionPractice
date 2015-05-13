@@ -16,6 +16,11 @@ class MainController < UIViewController
     rmq.append(UIButton, :album_button).on(:touch) do
       select_album
     end
+
+    #select multi picture
+    rmq.append(UIButton, :multi_pictures_button).on(:touch) do
+      show_picker
+    end
   end
 
   def take_photo
@@ -34,11 +39,22 @@ class MainController < UIViewController
     end
   end
 
+  def show_picker
+    @library ||= ALAssetsLibrary.alloc.init
+    controller = WSAssetPickerController.alloc.initWithAssetsLibrary(@library)
+    controller.delegate = ws_asset_picker_delegate
+    self.presentViewController(controller, animated:true, completion:nil)
+  end
+
   def set_photo(photo)
     return unless photo
     image_view = UIImageView.alloc.initWithImage(photo)
     image_view.setContentMode(UIViewContentModeScaleToFill)
     image_view.frame = [[20,280],[80,80]]
     view.addSubview(image_view)
+  end
+
+  def ws_asset_picker_delegate
+    @ws_asset_picker_delegate ||= WsAssetPickerDelegate.new(self)
   end
 end

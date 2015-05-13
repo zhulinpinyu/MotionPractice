@@ -14,8 +14,8 @@ Motion::Project::App.setup do |app|
   app.version = app.short_version
 
   # SDK 8 for iOS 8 and above
-  app.sdk_version = '8.2'
-  app.deployment_target = '8.2'
+  app.sdk_version = '8.3'
+  app.deployment_target = '8.3'
 
   app.icons = ["icon@2x.png", "icon-29@2x.png", "icon-40@2x.png", "icon-60@2x.png", "icon-76@2x.png", "icon-512@2x.png"]
 
@@ -35,12 +35,11 @@ Motion::Project::App.setup do |app|
   # app.vendor_project('vendor/Flurry', :static)
   # app.vendor_project('vendor/DSLCalendarView', :static, :cflags => '-fobjc-arc') # Using arc
   #
-  # app.pods do
-  #   pod 'AFNetworking'
-  #   pod 'SVProgressHUD'
-  #   pod 'JMImageCache'
-  # end
- 
+
+  app.pods do
+    pod 'WSAssetPickerController'
+  end
+
   app.development do
     app.codesign_certificate = "iPhone Developer: YOURNAME"
     app.provisioning_profile = "signing/camerademo.mobileprovision"

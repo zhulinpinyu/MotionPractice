@@ -1,0 +1,10 @@
+PODS:
+  - WSAssetPickerController (0.2.0)
+
+DEPENDENCIES:
+  - WSAssetPickerController
+
+SPEC CHECKSUMS:
+  WSAssetPickerController: 4af08d69bd403ad6a0916474c8abb22212e22ac1
+
+COCOAPODS: 0.37.1

@@ -24,4 +24,12 @@ class MainStylesheet < ApplicationStylesheet
     st.font = font.medium
     st.text = '相册'
   end
+
+  def multi_pictures_button(st)
+    st.frame = {top: 200, width: 200, height: 30, centered: :horizontal}
+    st.background_color = color.from_hex('FF9900')
+    st.color = color.battleship_gray
+    st.font = font.medium
+    st.text = '图片多选'
+  end
 end
