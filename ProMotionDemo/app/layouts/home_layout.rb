@@ -1,9 +1,11 @@
 class HomeLayout < MK::Layout
+  view :products_view
 
   def layout
     root :home do
       add(UIImageView, :profile_image)
       add(UILabel, :profession)
+      add(products_view, :products)
     end
   end
 
@@ -34,5 +36,11 @@ class HomeLayout < MK::Layout
       right_of(:profile_image).plus(20)
       height 30
     end
+  end
+
+  def products_style
+    top 200
+    left 0
+    right "100%"
   end
 end
