@@ -1,11 +1,27 @@
 class HomeLayout < MK::Layout
 
   def layout
-    root :main do
+    root :home do
+      add(UIImageView, :profile_image)
     end
   end
 
-  def main_style
+  def home_style
     background_color "#F9F9F9".uicolor
+  end
+
+  def profile_image_style
+    image "zlpy".uiimage
+    clips_to_bounds true
+    layer do
+      corner_radius 50.0
+    end
+
+    constraints do
+      left 20
+      top 84
+      width 100
+      height 100
+    end
   end
 end
