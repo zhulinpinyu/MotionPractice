@@ -3,6 +3,7 @@ class HomeLayout < MK::Layout
   def layout
     root :home do
       add(UIImageView, :profile_image)
+      add(UILabel, :profession)
     end
   end
 
@@ -22,6 +23,16 @@ class HomeLayout < MK::Layout
       top 84
       width 100
       height 100
+    end
+  end
+
+  def profession_style
+    text("Man, Programer")
+    font(UIFont.boldSystemFontOfSize(20))
+    constraints do
+      top 118
+      right_of(:profile_image).plus(20)
+      height 30
     end
   end
 end
