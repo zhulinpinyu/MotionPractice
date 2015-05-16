@@ -1,8 +1,12 @@
-class TopicsScreen < PM::Screen
+class TopicsScreen < PM::TableScreen
   title "Your title here"
   stylesheet TopicsScreenStylesheet
 
   def on_load
+  end
+  
+  def table_data
+    []
   end
   
 
