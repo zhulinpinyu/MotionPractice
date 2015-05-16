@@ -1,29 +1,49 @@
 class TopicsScreen < PM::TableScreen
-  title "Your title here"
+  attr_reader :topics
+
+  refreshable
+  title "RubyMotion 社区"
   stylesheet TopicsScreenStylesheet
 
   def on_load
+    @topics = []
+    start_refreshing
   end
-  
+
+  def start_refreshing
+    fetcher = DiscourseFetcher.new("latest.json")
+
+    fetcher.fetch do |topics_json|
+      @topics = Topic.build_many(topics_json)
+      end_refreshing
+      update_table_data
+    end
+  end
+
   def table_data
-    []
+    [{
+      title: "",
+      cells: topics.map do |topic|
+        {
+          title: topic.title,
+          subtitle: "last poster: #{topic.last_poster}",
+          action: :open_profile,
+          arguments: {topic: topic}
+        }
+      end
+    }]
   end
-  
 
-  # You don't have to reapply styles to all UIViews, if you want to optimize, another way to do it
-  # is tag the views you need to restyle in your stylesheet, then only reapply the tagged views, like so:
-  #   def logo(st)
-  #     st.frame = {t: 10, w: 200, h: 96}
-  #     st.centered = :horizontal
-  #     st.image = image.resource('logo')
-  #     st.tag(:reapply_style)
-  #   end
-  #
-  # Then in will_animate_rotate
-  #   find(:reapply_style).reapply_styles#
+  def on_refresh
+    start_refreshing
+  end
 
-  # Remove the following if you're only using portrait
+  def open_profile(data)
+    open UserScreen.new(topic: data[:topic])
+  end
+
   def will_animate_rotate(orientation, duration)
-    reapply_styles
+    find.all.reapply_styles
   end
+
 end

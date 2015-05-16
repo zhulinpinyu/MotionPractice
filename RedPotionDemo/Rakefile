@@ -21,12 +21,12 @@ Motion::Project::App.setup do |app|
   # RubyMotion by default selects the latest SDK you have installed,
   # if you would like to specify the SDK to assure consistency across multiple machines,
   # you can do so like the following examples
-  # app.sdk_version = '8.3'
+  app.sdk_version = '8.3'
   # app.sdk_version = '7.1'
 
   # Target OS
-  app.deployment_target = '7.1'
-  # app.deployment_target = '8.0'
+  # app.deployment_target = '7.1'
+  app.deployment_target = '8.3'
 
   app.icons = Dir.glob("resources/icon*.png").map{|icon| icon.split("/").last}
 
