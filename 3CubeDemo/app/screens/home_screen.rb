@@ -10,6 +10,13 @@ class HomeScreen < PM::Screen
     set_attributes(self.view,{
       background_color: hex_color("#FFFFFF")
     })
+
+    add(UILabel.new, {
+      text: "ProMotion Learn Code",
+      frame: [[50,200], [ 300, 30]],
+      font: UIFont.systemFontOfSize(26),
+      text_alignment: NSTextAlignmentCenter,
+    })
   end
 
   def open_about_screen
