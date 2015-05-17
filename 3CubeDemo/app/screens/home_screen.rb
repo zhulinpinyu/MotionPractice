@@ -12,6 +12,7 @@ class HomeScreen < PM::Screen
   end
 
   def open_about_screen
-    open_modal AboutScreen.new(nav_bar: true)
+    #open_modal AboutScreen.new(nav_bar: true)
+    open AboutScreen.new(nav_bar: true)
   end
 end
