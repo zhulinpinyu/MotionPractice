@@ -1,5 +1,7 @@
 class ListScreen < PM::TableScreen
+  
   title "List"
+  searchable(placeholder: "Search cell")
 
   def on_load
     set_nav_bar_button :right, title: "X", action: :close
