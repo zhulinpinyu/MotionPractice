@@ -19,7 +19,7 @@ class ListScreen < PM::TableScreen
   end
 
   def details(arg)
-    p arg[:index]
+    open DetailScreen.new(index: arg[:index])
   end
 
 end

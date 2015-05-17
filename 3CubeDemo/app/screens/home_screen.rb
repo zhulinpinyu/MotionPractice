@@ -13,7 +13,7 @@ class HomeScreen < PM::Screen
 
     add(UILabel.new, {
       text: "ProMotion Learn Code",
-      frame: [[50,200], [ 300, 30]],
+      frame: [[50,200], [300,30]],
       font: UIFont.systemFontOfSize(26),
       text_alignment: NSTextAlignmentCenter,
     })
