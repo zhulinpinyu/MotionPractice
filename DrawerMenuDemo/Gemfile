@@ -4,7 +4,7 @@ gem 'rake'
 
 # ProMotion
 gem 'ProMotion', '~> 2.0'
-# gem 'ProMotion-menu', '~> 1.0' # PM::Menu
+gem 'ProMotion-menu', '~> 1.0' # PM::Menu
 # gem 'ProMotion-form', '~> 0.3' # PM::FormScreen
 # gem 'ProMotion-push', '~> 0.3' # Push Notifications
 # gem 'ProMotion-map', '~> 0.5'  # PM::MapScreen

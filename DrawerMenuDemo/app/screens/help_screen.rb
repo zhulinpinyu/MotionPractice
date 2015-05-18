@@ -1,6 +1,14 @@
 class HelpScreen < PM::TableScreen
   title "Help"
 
+  def on_load
+    set_nav_bar_button :right, title: "Menu", action: :show_menu
+  end
+
+  def show_menu
+    app_delegate.show_menu
+  end
+
   def table_data
     [{
       title: "About",

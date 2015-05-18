@@ -16,3 +16,5 @@ nbproject
 .idea
 .dat*.*
 .bundle
+vendor/build
+vendor/Pods
