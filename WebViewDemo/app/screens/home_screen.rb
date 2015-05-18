@@ -1,12 +1,8 @@
-class HomeScreen < PM::Screen
-  title "Home"
+class HomeScreen < PM::WebScreen
+  title "OL3Map"
 
-  def on_load
-    set_nav_bar_button :right, title: "Help", action: :show_help
-  end
-
-  def show_help
-    open HelpScreen
+  def content
+    NSURL.URLWithString("http://localhost/~lixiangmu/openlayer3/mobile/ol3map/")
   end
 
 end
