@@ -9,3 +9,4 @@ Learn RubyMotion CodeRecord
 6. 3CubeDemo [ProMotion 单独使用 用例](./3CubeDemo)
 7. WebViewDemo [ProMotion WebScreen 简单JS交互 示例](./WebViewDemo)
 8. DrawerMenuDemo [ProMotion ProMotion-menu 实现抽屉menu的效果](./DrawerMenuDemo)
+9. PotionMapDemo [RedPotion ProMotion-map 地图应用示例](./PotionMapDemo)
