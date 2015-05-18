@@ -1,12 +1,12 @@
 DrawerMenuDemo
 ===
 
-1. add gem in Gemfile
+add gem in Gemfile
 ```ruby
 gem 'ProMotion-menu'
 ```
 
-2. Install gem and pod
+Install gem and pod
 ```ruby
 bundle
 rake pod:install
