@@ -48,6 +48,7 @@ Motion::Project::App.setup do |app|
   #   pod 'JGProgressHUD'
   #   pod 'SVProgressHUD'
   #   pod "FontasticIcons"
+    pod 'Mapbox-iOS-SDK', '1.6.1'
   end
 
   app.development do

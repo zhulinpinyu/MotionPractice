@@ -20,14 +20,33 @@ PODS:
   - AFNetworking/UIKit (2.5.4):
     - AFNetworking/NSURLConnection
     - AFNetworking/NSURLSession
+  - FMDB (2.3):
+    - FMDB/standard (= 2.3)
+  - FMDB/common (2.3)
+  - FMDB/standard (2.3):
+    - FMDB/common
+  - GRMustache (7.3.0):
+    - JRSwizzle (~> 1.0)
   - JMImageCache (0.4.0)
+  - JRSwizzle (1.0)
+  - Mapbox-iOS-SDK (1.6.1):
+    - FMDB (= 2.3)
+    - GRMustache (= 7.3.0)
+    - SMCalloutView (= 2.0)
+  - SMCalloutView (2.0)
 
 DEPENDENCIES:
   - AFNetworking (~> 2.5)
   - JMImageCache
+  - Mapbox-iOS-SDK (= 1.6.1)
 
 SPEC CHECKSUMS:
   AFNetworking: 05edc0ac4c4c8cf57bcf4b84be5b0744b6d8e71e
+  FMDB: 773d79bb74226959b7e2286b1d6e0bd857c88915
+  GRMustache: 6baee020c5644416c034f5afb1607f6219e7f753
   JMImageCache: fac25eb168a25b29ac130fee6a6b17ea463c1d86
+  JRSwizzle: dd5ead5d913a0f29e7f558200165849f006bb1e3
+  Mapbox-iOS-SDK: e05afd622a08015736b007f8adb7a1d8dc1a83da
+  SMCalloutView: f758edd824b18bf4f42de00df1e299861a2d1950
 
 COCOAPODS: 0.37.1
