@@ -1,5 +1,5 @@
 class HomeScreen < PM::Screen
-  MAPBOX_KEY = "pk.eyJ1Ijoiemh1bGlucGlueXUiLCJhIjoieWJDdWwzTSJ9.PfVmp2AcPEzrCMvejwfPDA"
+  MAPBOX_KEY = "Mapbox_key"
   title "MapBox"
   stylesheet HomeScreenStylesheet
 
