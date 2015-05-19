@@ -12,3 +12,4 @@ Learn RubyMotion CodeRecord
 9. PotionMapDemo [RedPotion ProMotion-map 地图应用示例](./PotionMapDemo)
 10. podsmap [RedPotion with pod (BaiduMapAPI) 百度地图应用示例](./podsmap)
 11. gmap [RedPotion with pod (Google-Maps-iOS-SDK) Google Map 应用示例](./gmap)
+12. MapBoxDemo [RedPotion with pod (Mapbox-iOS-SDK) Mapbox 应用示例](./MapBoxDemo)
