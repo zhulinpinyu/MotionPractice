@@ -13,10 +13,10 @@ pod 'Mapbox-iOS-SDK'
 rake pod:install
 ```
 
-other
+Other
 
 注册Mapbox获取key
 
-Doc: 
-[https://www.mapbox.com/developers/api/maps/#mapids](https://www.mapbox.com/developers/api/maps/#mapids)
+Doc:     
+[https://www.mapbox.com/developers/api/maps/#mapids](https://www.mapbox.com/developers/api/maps/#mapids)    
 [https://www.mapbox.com/mapbox-ios-sdk/examples/](https://www.mapbox.com/mapbox-ios-sdk/examples/)
