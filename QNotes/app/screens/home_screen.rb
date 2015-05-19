@@ -13,7 +13,7 @@ class HomeScreen < PM::TableScreen
   end
 
   def will_appear
-    self.tableView.reloadData
+    update_table_data
   end
 
   def add_note
@@ -24,11 +24,16 @@ class HomeScreen < PM::TableScreen
 
   def table_data
     [{
-      cells: manager.all_notes.map do |note|
+      cells: notes.map do |note|
         {
           title: note.content
         }
       end
     }]
+  end
+
+  def notes
+    manager.all_notes
+    
   end
 end
