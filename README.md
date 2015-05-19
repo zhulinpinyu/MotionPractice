@@ -10,4 +10,5 @@ Learn RubyMotion CodeRecord
 7. WebViewDemo [ProMotion WebScreen 简单JS交互 示例](./WebViewDemo)
 8. DrawerMenuDemo [ProMotion ProMotion-menu 实现抽屉menu的效果](./DrawerMenuDemo)
 9. PotionMapDemo [RedPotion ProMotion-map 地图应用示例](./PotionMapDemo)
-10. podsmap [RedPotion with pod (BaiduMapAPI) 百度地图应用示例](./podsmap) 
+10. podsmap [RedPotion with pod (BaiduMapAPI) 百度地图应用示例](./podsmap)
+11. gmap [RedPotion with pod (Google-Maps-iOS-SDK) Google Map 应用示例](./gmap)

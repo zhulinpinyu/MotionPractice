@@ -17,5 +17,5 @@ Other
 
 [申请百度Map Key](http://lbsyun.baidu.com/apiconsole/key)
 
-
+Doc: [http://developer.baidu.com/map/index.php?title=iossdk/guide/hellobaidumap](http://developer.baidu.com/map/index.php?title=iossdk/guide/hellobaidumap)
 
