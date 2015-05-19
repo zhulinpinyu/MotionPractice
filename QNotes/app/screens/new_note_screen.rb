@@ -9,7 +9,8 @@ class NewNoteScreen < PM::Screen
     append(UIButton, :save_button).on(:touch) do
       content = note_field.text
       manager.add(Note.new(content))
-      p manager.all_notes.count
+      manager.save
+      self.navigationController.popViewControllerAnimated(true)
     end
   end
 end

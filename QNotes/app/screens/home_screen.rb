@@ -12,6 +12,10 @@ class HomeScreen < PM::TableScreen
     set_nav_bar_button :right, system_item: :add, action: :add_note
   end
 
+  def will_appear
+    self.tableView.reloadData
+  end
+
   def add_note
     new_note_screen = NewNoteScreen.new
     new_note_screen.manager = manager
@@ -20,15 +24,11 @@ class HomeScreen < PM::TableScreen
 
   def table_data
     [{
-      cells: notes.map do |note|
+      cells: manager.all_notes.map do |note|
         {
           title: note.content
         }
       end
     }]
-  end
-
-  def notes
-    manager.all_notes
   end
 end
