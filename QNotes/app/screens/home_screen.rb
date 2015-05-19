@@ -1,36 +1,34 @@
-class HomeScreen < PM::Screen
-  title "Your title here"
+class HomeScreen < PM::TableScreen
+  attr_accessor :manager
+
+  title "QNotes"
   stylesheet HomeScreenStylesheet
 
+  def on_init
+    self.manager = NoteManager.new
+  end
+
   def on_load
-    set_nav_bar_button :left, system_item: :camera, action: :nav_left_button
-    set_nav_bar_button :right, title: "Right", action: :nav_right_button
-
-    @hello_world = append!(UILabel, :hello_world)
+    set_nav_bar_button :right, system_item: :add, action: :add_note
   end
 
-  def nav_left_button
-    mp 'Left button'
+  def add_note
+    new_note_screen = NewNoteScreen.new
+    new_note_screen.manager = manager
+    open new_note_screen
   end
 
-  def nav_right_button
-    mp 'Right button'
+  def table_data
+    [{
+      cells: notes.map do |note|
+        {
+          title: note.content
+        }
+      end
+    }]
   end
 
-  # You don't have to reapply styles to all UIViews, if you want to optimize, another way to do it
-  # is tag the views you need to restyle in your stylesheet, then only reapply the tagged views, like so:
-  #   def logo(st)
-  #     st.frame = {t: 10, w: 200, h: 96}
-  #     st.centered = :horizontal
-  #     st.image = image.resource('logo')
-  #     st.tag(:reapply_style)
-  #   end
-  #
-  # Then in will_animate_rotate
-  #   find(:reapply_style).reapply_styles#
-
-  # Remove the following if you're only using portrait
-  def will_animate_rotate(orientation, duration)
-    find.all.reapply_styles
+  def notes
+    manager.all_notes
   end
 end
