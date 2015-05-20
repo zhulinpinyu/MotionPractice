@@ -20,7 +20,8 @@ class ListScreen < PM::TableScreen
           title: "mlx #{i}",
           subtitle: "simple text #{i}",
           action: :details,
-          arguments: {index: i}
+          arguments: {index: i},
+          editing_style: :delete
         }
       end
       }]

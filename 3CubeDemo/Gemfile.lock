@@ -1,10 +1,12 @@
 GEM
   remote: https://rubygems.org/
   specs:
-    ProMotion (2.4.0)
+    ProMotion (2.4.1)
       methadone (~> 1.7)
+      motion_print (~> 1.0)
     methadone (1.9.0)
       bundler
+    motion_print (1.0.0)
     rake (10.4.2)
 
 PLATFORMS
