@@ -26,14 +26,18 @@ class HomeScreen < PM::TableScreen
     [{
       cells: notes.map do |note|
         {
-          title: note.content
+          title: note.content,
+          editing_style: :delete
         }
       end
     }]
   end
 
+  def on_cell_deleted(cell)
+    manager.delete(cell[:title])
+  end
+
   def notes
     manager.all_notes
-    
   end
 end

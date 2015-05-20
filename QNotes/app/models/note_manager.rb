@@ -14,10 +14,22 @@ class NoteManager
     self.notes << note
   end
 
+  def delete(content)
+    note = find(content)
+    self.notes.delete(note)
+    self.save
+  end
+
   def save
     data = NSKeyedArchiver.archivedDataWithRootObject(self.notes)
     NSUserDefaults.standardUserDefaults.setObject(data, forKey: "notes")
     NSUserDefaults.standardUserDefaults.synchronize
+  end
+
+  def find(content)
+    all_notes.each do |note|
+      return note if note.content == content
+    end
   end
 
 end
