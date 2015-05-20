@@ -2,7 +2,7 @@ source "https://rubygems.org"
 
 gem "rake"
 gem "motion-cocoapods"
-gem "redpotion"
+gem "redpotion", github: "zhulinpinyu/redpotion"
 
 # Debugging tools
 gem "newclear" # Completely wipe out the simulator and rebuild
