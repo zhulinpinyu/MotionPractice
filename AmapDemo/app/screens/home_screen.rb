@@ -1,20 +1,14 @@
 class HomeScreen < PM::Screen
-  title "Your title here"
+  AMAP_KEY = "KEY"
+  title "Amap"
   stylesheet HomeScreenStylesheet
 
   def on_load
-    set_nav_bar_button :left, system_item: :camera, action: :nav_left_button
-    set_nav_bar_button :right, title: "Right", action: :nav_right_button
-
     @hello_world = append!(UILabel, :hello_world)
-  end
-
-  def nav_left_button
-    mp 'Left button'
-  end
-
-  def nav_right_button
-    mp 'Right button'
+    MAMapServices.sharedServices.apiKey = AMAP_KEY
+    map_view = MAMapView.alloc.initWithFrame(CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)))
+    #map_view.delegate = self
+    self.view = map_view
   end
 
   # You don't have to reapply styles to all UIViews, if you want to optimize, another way to do it

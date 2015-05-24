@@ -11,7 +11,7 @@ Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings
 
   app.name = 'AmapDemo'
-  app.identifier = 'com.your_domain_here.amapdemo'
+  app.identifier = 'com.zlpy.amapdemo'
 
   app.short_version = '0.1.0'
   # Get version from git
@@ -25,7 +25,7 @@ Motion::Project::App.setup do |app|
   # app.sdk_version = '7.1'
 
   # Target OS
-  app.deployment_target = '7.1'
+  # app.deployment_target = '7.1'
   # app.deployment_target = '8.0'
 
   app.icons = Dir.glob("resources/icon*.png").map{|icon| icon.split("/").last}
@@ -45,6 +45,7 @@ Motion::Project::App.setup do |app|
 
   app.pods do
     pod 'JMImageCache'
+    pod 'AMap3DMap'
   #   pod 'JGProgressHUD'
   #   pod 'SVProgressHUD'
   #   pod "FontasticIcons"
