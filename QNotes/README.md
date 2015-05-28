@@ -19,3 +19,13 @@ RedPotion use ProMotion-2.3.1 (editing_style: :delete) not work, update ProMotio
 **editing_style: :delete**
 
 ![editing_style: :delete](screen_snapshots/向左滑动显示删.png)
+
+```ruby
+accessory: {
+  view: :switch, # UIView or :switch
+  value: true, # whether it's "checked" or not
+  action: :accessory_switched,
+  arguments: { some_arg: true } # :value is passed in if a hash
+}
+```
+![](screen_snapshots/switch.png)
