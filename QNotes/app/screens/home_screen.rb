@@ -27,6 +27,13 @@ class HomeScreen < PM::TableScreen
       cells: notes.map do |note|
         {
           title: note.content,
+          height: 90,
+          accessory: {
+            view: :switch, # UIView or :switch
+            value: true, # whether it's "checked" or not
+            action: :accessory_switched,
+            arguments: { some_arg: true } # :value is passed in if a hash
+          },
           editing_style: :delete
         }
       end
