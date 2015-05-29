@@ -10,16 +10,30 @@ class HomeScreen < PM::Screen
     map_view.setCenterCoordinate(CLLocationCoordinate2DMake(coordinate[:latitude],coordinate[:longitude]))
     map_view.setZoomLevel(17, animated: false)
     map_view.delegate = self
-    annotation = MAPointAnnotation.alloc.init
-    annotation.coordinate = CLLocationCoordinate2DMake(22.533773, 114.029946)
-    annotation.title = "KFC"
-    annotation.subtitle = "KFC TA"
-    map_view.addAnnotation(annotation)
+    annotation1 = MAPointAnnotation.alloc.init
+    annotation1.coordinate = CLLocationCoordinate2DMake(22.533773, 114.029946)
+    annotation1.title = "KFC"
+    annotation1.subtitle = "KFC TA"
+    map_view.addAnnotation(annotation1)
+
+    annotation2 = MAPointAnnotation.alloc.init
+    annotation2.coordinate = CLLocationCoordinate2DMake(22.535, 114.03)
+    annotation2.title = "MCD"
+    annotation2.subtitle = "MCD TA"
+    map_view.addAnnotation(annotation2)
+
+    annotation3 = MAPointAnnotation.alloc.init
+    annotation3.coordinate = CLLocationCoordinate2DMake(22.535, 114.032)
+    annotation3.title = "DDM"
+    annotation3.subtitle = "DDM TA"
+    map_view.addAnnotation(annotation3)
+
     self.view.addSubview(map_view)
   end
 
   def mapView(view, viewForAnnotation: annotation)
-    annotation_view = MAPinAnnotationView.alloc.initWithAnnotation(annotation, reuseIdentifier: "id")
+    @point_identifier = "point_identifier"
+    annotation_view = MAPinAnnotationView.alloc.initWithAnnotation(annotation, reuseIdentifier: @point_identifier)
     annotation_view.setCanShowCallout(true)
   end
 end
