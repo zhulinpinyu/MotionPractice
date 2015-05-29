@@ -4,9 +4,11 @@ class HomeScreen < PM::Screen
   stylesheet HomeScreenStylesheet
 
   def on_load
-    @hello_world = append!(UILabel, :hello_world)
     MAMapServices.sharedServices.apiKey = AMAP_KEY
     map_view = MAMapView.alloc.initWithFrame(CGRectMake(0, 0, CGRectGetWidth(self.view.bounds), CGRectGetHeight(self.view.bounds)))
+    coordinate = {latitude: 22.53, longitude: 114.03}
+    map_view.setCenterCoordinate(CLLocationCoordinate2DMake(coordinate[:latitude],coordinate[:longitude]))
+    map_view.setZoomLevel(17, animated: false)
     #map_view.delegate = self
     self.view = map_view
   end
