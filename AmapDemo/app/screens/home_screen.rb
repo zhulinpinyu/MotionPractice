@@ -9,12 +9,17 @@ class HomeScreen < PM::Screen
     coordinate = {latitude: 22.535, longitude: 114.03}
     map_view.setCenterCoordinate(CLLocationCoordinate2DMake(coordinate[:latitude],coordinate[:longitude]))
     map_view.setZoomLevel(17, animated: false)
-    #map_view.delegate = self
+    map_view.delegate = self
     annotation = MAPointAnnotation.alloc.init
     annotation.coordinate = CLLocationCoordinate2DMake(22.533773, 114.029946)
     annotation.title = "KFC"
     annotation.subtitle = "KFC TA"
     map_view.addAnnotation(annotation)
-    self.view = map_view
+    self.view.addSubview(map_view)
+  end
+
+  def mapView(view, viewForAnnotation: annotation)
+    annotation_view = MAPinAnnotationView.alloc.initWithAnnotation(annotation, reuseIdentifier: "id")
+    annotation_view.setCanShowCallout(true)
   end
 end
