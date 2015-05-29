@@ -28,12 +28,17 @@ class HomeScreen < PM::Screen
     annotation3.subtitle = "DDM TA"
     map_view.addAnnotation(annotation3)
 
-    self.view.addSubview(map_view)
+    self.view = map_view
   end
 
-  def mapView(view, viewForAnnotation: annotation)
-    @point_identifier = "point_identifier"
-    annotation_view = MAPinAnnotationView.alloc.initWithAnnotation(annotation, reuseIdentifier: @point_identifier)
+  def mapView(map_view, viewForAnnotation: annotation)
+    @point_identifier ||= "point_identifier"
+    annotation_view = map_view.dequeueReusableAnnotationViewWithIdentifier(@point_identifier)
+    unless annotation_view
+      annotation_view = MAPinAnnotationView.alloc.initWithAnnotation(annotation, reuseIdentifier: @point_identifier)
+    end
     annotation_view.setCanShowCallout(true)
+    annotation_view.setAnimatesDrop(true)
+    annotation_view.setPinColor(MAPinAnnotationColorGreen)
   end
 end
