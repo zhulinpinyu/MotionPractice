@@ -13,5 +13,5 @@ Learn RubyMotion CodeRecord
 10. podsmap [RedPotion with pod (BaiduMapAPI) 百度地图应用示例](./podsmap)
 11. gmap [RedPotion with pod (Google-Maps-iOS-SDK) Google Map 应用示例](./gmap)
 12. MapBoxDemo [RedPotion with pod (Mapbox-iOS-SDK) Mapbox 应用示例](./MapBoxDemo)
-13. QNotes [NSCoder NSCoding NSUserDefaults 保存数据到磁盘 滑动删除](./QNotes)
+13. QNotes [NSCoder NSCoding NSUserDefaults 保存数据到磁盘 滑动删除 ProMotion-tab-example](./QNotes)
 14. AmapDemo [高德地图 Basic demo](./AmapDemo)
