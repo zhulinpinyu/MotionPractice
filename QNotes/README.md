@@ -29,3 +29,6 @@ accessory: {
 }
 ```
 ![](screen_snapshots/switch.png)
+
+
+### ProMotion-tab-example
