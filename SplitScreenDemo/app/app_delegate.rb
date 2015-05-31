@@ -3,7 +3,8 @@ class AppDelegate < PM::Delegate
   status_bar true, animation: :fade
 
   def on_load(app, options)
-    open HomeScreen.new(nav_bar: true)
+    #open HomeScreen.new(nav_bar: true)
+    open_split_screen HelpScreen, HomeScreen.new(nav_bar: true)
   end
 
   # Remove this if you are only supporting portrait
