@@ -10,6 +10,7 @@ class HomeScreen < PM::TableScreen
 
   def on_load
     set_nav_bar_button :right, system_item: :add, action: :add_note
+    set_tab_bar_item system_item: :favorites
   end
 
   def will_appear
@@ -28,12 +29,12 @@ class HomeScreen < PM::TableScreen
         {
           title: note.content,
           height: 90,
-          accessory: {
-            view: :switch, # UIView or :switch
-            value: true, # whether it's "checked" or not
-            action: :accessory_switched,
-            arguments: { some_arg: true } # :value is passed in if a hash
-          },
+          # accessory: {
+          #   view: :switch, # UIView or :switch
+          #   value: true, # whether it's "checked" or not
+          #   action: :accessory_switched,
+          #   arguments: { some_arg: true } # :value is passed in if a hash
+          # },
           editing_style: :delete
         }
       end

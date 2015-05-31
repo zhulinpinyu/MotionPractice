@@ -3,6 +3,9 @@ class NewNoteScreen < PM::Screen
 
   title "New Note"
   stylesheet NewNoteScreenStylesheet
+  def on_init
+    set_tab_bar_item system_item: :downloads
+  end
 
   def on_load
     note_field = append(UITextField, :note_field).get
