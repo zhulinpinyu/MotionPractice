@@ -32,3 +32,4 @@ accessory: {
 
 
 ### ProMotion-tab-example
+[https://github.com/markrickert/promotion-tab-badge-example](https://github.com/markrickert/promotion-tab-badge-example)
