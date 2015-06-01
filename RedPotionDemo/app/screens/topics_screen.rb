@@ -11,12 +11,14 @@ class TopicsScreen < PM::TableScreen
   end
 
   def start_refreshing
+    app_delegate.notifier.loading
     fetcher = DiscourseFetcher.new("latest.json")
 
     fetcher.fetch do |topics_json|
       @topics = Topic.build_many(topics_json)
       end_refreshing
       update_table_data
+      app_delegate.notifier.dismiss
     end
   end
 
