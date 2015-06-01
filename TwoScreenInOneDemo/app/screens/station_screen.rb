@@ -1,30 +1,23 @@
-class HomeScreen < PM::Screen
-  title "Tow in one"
-  stylesheet HomeScreenStylesheet
+class StationScreen < PM::TableScreen
+  attr_accessor :container
 
-  def on_load
-    @map = MapScreen.new
-    @station = StationScreen.new(container: WeakRef.new(self))
-  end
+  stylesheet StationScreenStylesheet
 
-  def will_appear
-    @view_setup ||= self.setup_view
-  end
-
-  def setup_view
-    add @map.view, {
-      frame: CGRectMake(0, 0, view.frame.size.width, view.frame.size.height / 2)
-    }
-
-    add @station.view, {
-      frame: CGRectMake(0, view.frame.size.height / 2, view.frame.size.width, view.frame.size.height / 2)
-    }
-
-    true
+  def table_data
+    [{
+      title: "",
+      cells: ["购物公园","福田","会展中心"].map do |station|
+        {
+          title: station,
+          action: :tapped_station,
+          arguments: {station: station}
+        }
+      end
+    }]
   end
 
   def tapped_station(args)
-    @map.go_to((args[:station]))
+    container.tapped_station(args)
   end
 
   # You don't have to reapply styles to all UIViews, if you want to optimize, another way to do it
@@ -41,6 +34,6 @@ class HomeScreen < PM::Screen
 
   # Remove the following if you're only using portrait
   def will_animate_rotate(orientation, duration)
-    find.all.reapply_styles
+    reapply_styles
   end
 end
