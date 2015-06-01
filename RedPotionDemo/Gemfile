@@ -23,4 +23,4 @@ gem "newclear" # Completely wipe out the simulator and rebuild
 # gem "motion-juxtapose", "~> 0.1"
 
 # Easy HUD with SVProgressHUD
-# gem 'motion-blitz'
+gem 'motion-blitz', github: "zhulinpinyu/motion-blitz"
