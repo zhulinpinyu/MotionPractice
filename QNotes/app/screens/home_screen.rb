@@ -33,7 +33,7 @@ class HomeScreen < PM::TableScreen
             view: :switch, # UIView or :switch
             value: true, # whether it's "checked" or not
             action: :accessory_switched,
-            arguments: {checked: :value}
+            arguments: {}
           },
           editing_style: :delete
         }
@@ -42,7 +42,7 @@ class HomeScreen < PM::TableScreen
   end
 
   def accessory_switched(args)
-    p args[:value]
+    p args
   end
 
   def on_cell_deleted(cell)
