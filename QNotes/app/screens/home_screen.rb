@@ -29,16 +29,22 @@ class HomeScreen < PM::TableScreen
         {
           title: note.content,
           height: 90,
+          action: :toggle_check_mark,
           accessory: {
             view: :switch, # UIView or :switch
             value: true, # whether it's "checked" or not
             action: :accessory_switched,
             arguments: {}
           },
-          editing_style: :delete
+          editing_style: :delete,
+          arguments: {}
         }
       end
     }]
+  end
+
+  def toggle_check_mark(args)
+    p args
   end
 
   def accessory_switched(args)
