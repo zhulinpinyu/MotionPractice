@@ -11,6 +11,8 @@ class UserScreen < PM::Screen
   end
 
   def on_load
+    #app_delegate.notifier.loading
+    app_delegate.notifier.loading(:black)
     @state = UserScreenState.new
     set_state
     fetch_user
@@ -44,6 +46,7 @@ class UserScreen < PM::Screen
       state.details_title = "User Information"
 
       set_state
+      app_delegate.notifier.dismiss
     end
   end
 
