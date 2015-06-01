@@ -12,12 +12,12 @@ class HomeScreen < PM::Screen
   end
 
   def setup_view
-    add @map.view, {
-      frame: CGRectMake(0, 0, view.frame.size.width, view.frame.size.height / 2)
+    add @station.view, {
+      frame: CGRectMake(0, 60, view.frame.size.width / 4, view.frame.size.height)
     }
 
-    add @station.view, {
-      frame: CGRectMake(0, view.frame.size.height / 2, view.frame.size.width, view.frame.size.height / 2)
+    add @map.view, {
+      frame: CGRectMake(view.frame.size.width / 4, 60, view.frame.size.width * 3 / 4, view.frame.size.height)
     }
 
     true
