@@ -9,12 +9,12 @@ class HomeScreenStylesheet < ApplicationStylesheet
     st.background_color = color.white
   end
 
-  def hello_world(st)
-    st.frame = {t: 100, w: 200, h: 18, centered: :horizontal}
-    st.text_alignment = :center
-    st.color = color.battleship_gray
-    st.font = font.medium
-    st.text = 'Hello World'
+  def station_view(st)
+    st.frame = {l: 0, t: 60, w: Device.screen.width / 4, h: Device.screen.height }
+  end
+
+  def map_view(st)
+    st.frame = {l: Device.screen.width / 4, t: 60, w: Device.screen.width * 3 / 4, h: Device.screen.height }
   end
 
 end

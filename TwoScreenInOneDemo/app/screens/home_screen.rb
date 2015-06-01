@@ -12,13 +12,15 @@ class HomeScreen < PM::Screen
   end
 
   def setup_view
-    add @station.view, {
-      frame: CGRectMake(0, 60, view.frame.size.width / 4, view.frame.size.height)
-    }
+    append(@station.view, :station_view)
+    append(@map.view, :map_view)
+    # add @station.view, {
+    #   frame: CGRectMake(0, 60, view.frame.size.width / 4, view.frame.size.height)
+    # }
 
-    add @map.view, {
-      frame: CGRectMake(view.frame.size.width / 4, 60, view.frame.size.width * 3 / 4, view.frame.size.height)
-    }
+    # add @map.view, {
+    #   frame: CGRectMake(view.frame.size.width / 4, 60, view.frame.size.width * 3 / 4, view.frame.size.height)
+    # }
 
     true
   end
