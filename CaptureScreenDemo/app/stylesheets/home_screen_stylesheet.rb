@@ -6,7 +6,7 @@ class HomeScreenStylesheet < ApplicationStylesheet
   end
 
   def root_view(st)
-    st.background_color = color.white
+    st.background_color = color.green
   end
 
   def hello_world(st)
