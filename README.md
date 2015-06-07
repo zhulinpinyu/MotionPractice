@@ -18,3 +18,4 @@ Learn RubyMotion CodeRecord
 15. SplitScreenDemo [Split Screen ProMotion (iPad Only)](./SplitScreenDemo)
 16. TwoScreenInOneDemo [两个Screen 显示在同一个当前屏幕 并有交互](./TwoScreenInOneDemo)
 17. CaptureScreenDemo [截屏 自定义颜色](./CaptureScreenDemo)
+18. GCDDemo [Grand Central Dispatch---GCD Apple 多线程技术](./GCDDemo)
