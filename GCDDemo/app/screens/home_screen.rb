@@ -11,10 +11,17 @@ class HomeScreen < PM::Screen
 
   def on_appear
     urls = ImageList.sharedInstance.images
+
+    q = Dispatch::Queue.new('zlpy.ImageLoading')
+
     urls.each do |url|
-      image_data = NSData.dataWithContentsOfURL(NSURL.URLWithString(url))
-      image = UIImage.imageWithData(image_data)
-      rmq(UIImageView)[urls.index(url)].get.image = image
+      q.async do
+        image_data = NSData.dataWithContentsOfURL(NSURL.URLWithString(url))
+        image = UIImage.imageWithData(image_data)
+        Dispatch::Queue.main.async do
+          rmq(UIImageView)[urls.index(url)].get.image = image
+        end
+      end
     end
   end
 
