@@ -18,7 +18,7 @@ class HomeScreen < PM::Screen
       q.async do
         image_data = NSData.dataWithContentsOfURL(NSURL.URLWithString(url))
         image = UIImage.imageWithData(image_data)
-        Dispatch::Queue.main.async do
+        Dispatch::Queue.main.sync do
           rmq(UIImageView)[urls.index(url)].get.image = image
         end
       end
