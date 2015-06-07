@@ -12,8 +12,8 @@ class HomeScreen < PM::Screen
   def on_appear
     urls = ImageList.sharedInstance.images
 
-    q = Dispatch::Queue.new('zlpy.ImageLoading')
-
+    #q = Dispatch::Queue.new('zlpy.ImageLoading')
+    q = Dispatch::Queue.concurrent(:default) #:default, :high, :low
     urls.each do |url|
       q.async do
         image_data = NSData.dataWithContentsOfURL(NSURL.URLWithString(url))
