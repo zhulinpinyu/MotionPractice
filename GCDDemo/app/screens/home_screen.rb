@@ -9,6 +9,15 @@ class HomeScreen < PM::Screen
     append!(UIImageView, :blue_image)
   end
 
+  def on_appear
+    urls = ImageList.sharedInstance.images
+    urls.each do |url|
+      image_data = NSData.dataWithContentsOfURL(NSURL.URLWithString(url))
+      image = UIImage.imageWithData(image_data)
+      rmq(UIImageView)[urls.index(url)].get.image = image
+    end
+  end
+
   def init_nav
     set_nav_bar_button :left, system_item: :camera, action: :nav_left_button
     set_nav_bar_button :right, title: "→", action: :nav_right_button
