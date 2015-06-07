@@ -4,7 +4,9 @@ class HomeScreen < PM::Screen
 
   def on_load
     init_nav
-    @hello_world = append!(UILabel, :hello_world)
+    append!(UIImageView, :red_image)
+    append!(UIImageView, :green_image)
+    append!(UIImageView, :blue_image)
   end
 
   def init_nav

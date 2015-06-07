@@ -9,12 +9,19 @@ class HomeScreenStylesheet < ApplicationStylesheet
     st.background_color = color.white
   end
 
-  def hello_world(st)
-    st.frame = {t: 100, w: 200, h: 18, centered: :horizontal}
-    st.text_alignment = :center
-    st.color = color.battleship_gray
-    st.font = font.medium
-    st.text = 'Hello World'
+  def red_image(st)
+    st.frame = {t: 130, l: 30, w: 86, h: 86}
+    st.background_color = color.red
+  end
+
+  def green_image(st)
+    st.frame = {t: 130, l: 127, w: 86, h: 86}
+    st.background_color = color.green
+  end
+
+  def blue_image(st)
+    st.frame = {t: 130, l: 224, w: 86, h: 86}
+    st.background_color = color.blue
   end
 
 end
