@@ -1,31 +1,22 @@
-class HomeScreen < PM::Screen
+class HomeScreen < PM::TableScreen
   title "Tasker"
   stylesheet HomeScreenStylesheet
 
   def on_load
-    set_nav_bar_button :right, system_item: :add, action: :add_task
+    init_nav
 
     @hello_world = append!(UILabel, :hello_world)
+  end
+
+  def table_data
+    []
   end
 
   def add_task
     mp 'Add Task'
   end
 
-  # You don't have to reapply styles to all UIViews, if you want to optimize, another way to do it
-  # is tag the views you need to restyle in your stylesheet, then only reapply the tagged views, like so:
-  #   def logo(st)
-  #     st.frame = {t: 10, w: 200, h: 96}
-  #     st.centered = :horizontal
-  #     st.image = image.resource('logo')
-  #     st.tag(:reapply_style)
-  #   end
-  #
-  # Then in will_animate_rotate
-  #   find(:reapply_style).reapply_styles#
-
-  # Remove the following if you're only using portrait
-  def will_animate_rotate(orientation, duration)
-    find.all.reapply_styles
+  def init_nav
+    set_nav_bar_button :right, system_item: :add, action: :add_task
   end
 end
