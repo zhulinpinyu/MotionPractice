@@ -1,6 +1,8 @@
 class AppDelegate < PM::Delegate
   include CDQ # Remove this if you aren't using CDQ
 
+  StandardAppearance.apply
+
   status_bar true, animation: :fade
 
   def on_load(app, options)

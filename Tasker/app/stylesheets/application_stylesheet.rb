@@ -36,5 +36,18 @@ class ApplicationStylesheet < RubyMotionQuery::Stylesheet
     st.background_color = color.clear
     st.color = color.black
   end
+end
 
+class StandardAppearance
+  class << self
+    def apply
+      UINavigationBar.appearance.tap do |o|
+        o.barTintColor = UIColor.purpleColor
+        o.tintColor = UIColor.whiteColor
+        o.setTitleTextAttributes({
+          UITextAttributeTextColor: UIColor.whiteColor
+        })
+      end
+    end
+  end
 end
