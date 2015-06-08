@@ -1,20 +1,15 @@
 class HomeScreen < PM::Screen
-  title "Your title here"
+  title "Tasker"
   stylesheet HomeScreenStylesheet
 
   def on_load
-    set_nav_bar_button :left, system_item: :camera, action: :nav_left_button
-    set_nav_bar_button :right, title: "Right", action: :nav_right_button
+    set_nav_bar_button :right, system_item: :add, action: :add_task
 
     @hello_world = append!(UILabel, :hello_world)
   end
 
-  def nav_left_button
-    mp 'Left button'
-  end
-
-  def nav_right_button
-    mp 'Right button'
+  def add_task
+    mp 'Add Task'
   end
 
   # You don't have to reapply styles to all UIViews, if you want to optimize, another way to do it

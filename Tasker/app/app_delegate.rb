@@ -6,7 +6,7 @@ class AppDelegate < PM::Delegate
   status_bar true, animation: :fade
 
   def on_load(app, options)
-    cdq.setup # Remove this if you aren't using CDQ
+    cdq.setup
     open HomeScreen.new(nav_bar: true)
   end
 
