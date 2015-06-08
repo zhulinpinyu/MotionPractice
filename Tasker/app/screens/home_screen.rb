@@ -13,7 +13,10 @@ class HomeScreen < PM::TableScreen
   end
 
   def add_task
-    mp 'Add Task'
+    open_modal TaskScreen.new(nav_bar: true,
+      transition_style: UIModalTransitionStyleFlipHorizontal,
+      presentation_style: UIModalPresentationFormSheet
+    )
   end
 
   def init_nav
