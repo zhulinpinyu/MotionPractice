@@ -18,12 +18,18 @@ class HomeScreen < PM::TableScreen
           title: task.title,
           subtitle: NSDateFormatter.localizedStringFromDate(
             task.due_at,
-            dateStyle:NSDateFormatterShortStyle,
-            timeStyle:NSDateFormatterShortStyle
-          )
+            dateStyle:NSDateFormatterMediumStyle,
+            timeStyle:NSDateFormatterMediumStyle
+          ),
+          editing_style: :delete
         }
       end
     }]
+  end
+
+  def on_cell_deleted(cell)
+    Task.where(:title).eq(cell[:title]).first.destroy
+    cdq.save
   end
 
   def add_task
