@@ -4,6 +4,7 @@ class TaskScreen < PM::Screen
 
   def on_load
     set_nav_bar_button :right, title: "X", action: :close
+    append!(TaskView, :task_view)
   end
 
   def will_animate_rotate(orientation, duration)

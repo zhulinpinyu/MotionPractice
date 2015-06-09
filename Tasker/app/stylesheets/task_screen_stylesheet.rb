@@ -10,4 +10,14 @@ class TaskScreenStylesheet < ApplicationStylesheet
   def root_view(st)
     st.background_color = color.white
   end
+
+  def task_view(st)
+    st.frame = :full
+    st.background_color = color.gray
+  end
+
+  def text_field(st)
+    st.frame = [[20,100],[100,30]]
+    st.placeholder = "WER"
+  end
 end
