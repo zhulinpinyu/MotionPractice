@@ -4,12 +4,21 @@ class HomeScreen < PM::TableScreen
 
   def on_load
     init_nav
+    @tasks = Task.all
+  end
 
-    @hello_world = append!(UILabel, :hello_world)
+  def will_appear
+    update_table_data
   end
 
   def table_data
-    []
+    [{
+      cells: @tasks.map do |task|
+        {
+          title: task.title
+        }
+      end
+    }]
   end
 
   def add_task
