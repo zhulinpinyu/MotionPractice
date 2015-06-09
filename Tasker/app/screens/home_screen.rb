@@ -15,7 +15,12 @@ class HomeScreen < PM::TableScreen
     [{
       cells: @tasks.map do |task|
         {
-          title: task.title
+          title: task.title,
+          subtitle: NSDateFormatter.localizedStringFromDate(
+            task.due_at,
+            dateStyle:NSDateFormatterShortStyle,
+            timeStyle:NSDateFormatterShortStyle
+          )
         }
       end
     }]
