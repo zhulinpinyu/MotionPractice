@@ -21,10 +21,16 @@ class HomeScreen < PM::TableScreen
             dateStyle:NSDateFormatterMediumStyle,
             timeStyle:NSDateFormatterMediumStyle
           ),
-          editing_style: :delete
+          editing_style: :delete,
+          action: :show_details,
+          arguments: task
         }
       end
     }]
+  end
+
+  def show_details(task)
+    open_modal TaskScreen.new(nav_bar: true, task: task)
   end
 
   def on_cell_deleted(cell)
