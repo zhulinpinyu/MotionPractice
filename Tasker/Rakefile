@@ -11,7 +11,7 @@ Motion::Project::App.setup do |app|
   # Use `rake config' to see complete project settings
 
   app.name = 'Tasker'
-  app.identifier = 'com.your_domain_here.tasker'
+  app.identifier = 'com.zlpy.ninjamap'
 
   app.short_version = '0.1.0'
   # Get version from git
@@ -51,14 +51,14 @@ Motion::Project::App.setup do |app|
   end
 
   app.development do
-    app.codesign_certificate = "iPhone Developer: YOURNAME"
-    app.provisioning_profile = "signing/tasker.mobileprovision"
+    app.codesign_certificate = "iPhone Developer: 理想 Mu"
+    app.provisioning_profile = "signing/ninjamap.mobileprovision"
   end
 
   app.release do
     app.entitlements['get-task-allow'] = false
-    app.codesign_certificate = 'iPhone Distribution: YOURNAME'
-    app.provisioning_profile = "signing/tasker.mobileprovision"
+    app.codesign_certificate = 'iPhone Distribution: 理想 Mu'
+    app.provisioning_profile = "signing/ninjamap.mobileprovision"
     app.entitlements['beta-reports-active'] = true # For TestFlight
 
     app.seed_id = "YOUR_SEED_ID"
