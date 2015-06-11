@@ -1,5 +1,6 @@
 class AppDelegate < PM::Delegate
   include CDQ # Remove this if you aren't using CDQ
+  include PM::DelegateNotifications
 
   StandardAppearance.apply
 
@@ -7,13 +8,21 @@ class AppDelegate < PM::Delegate
 
   def on_load(app, options)
     cdq.setup
+    register_for_push_notifications :all
     open HomeScreen.new(nav_bar: true)
   end
 
-  # Remove this if you are only supporting portrait
-  def application(application, willChangeStatusBarOrientation: new_orientation, duration: duration)
-    # Manually set RMQ's orientation before the device is actually oriented
-    # So that we can do stuff like style views before the rotation begins
-    device.orientation = new_orientation
+  # def on_unload
+  #   unregister_for_push_notifications
+  # end
+
+  def on_push_registration(token, error)
+    mp token.description
+    mp registered_push_notifications
+  end
+
+  def on_push_notification(notification, launched)
+    mp notification.alert
+    mp notification.aps
   end
 end
