@@ -20,3 +20,7 @@ Learn RubyMotion CodeRecord
 17. CaptureScreenDemo [截屏 自定义颜色](./CaptureScreenDemo)
 18. GCDDemo [Grand Central Dispatch---GCD Apple 多线程技术](./GCDDemo)
 19. Tasker [NSFetchedResultsController Demo](./Tasker)
+
+
+其他参考：
+[Promotion-form 用法](http://jamonholmgren.com/building-ios-forms-the-promotion-way-with-promotion-form/)
